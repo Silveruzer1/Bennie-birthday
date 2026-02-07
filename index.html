@@ -1,96 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday Bennie 🤍</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Teddy Bear 🤍</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #fff1f5, #ffe4ec);
-      color: #333;
-      text-align: center;
-      padding: 30px 15px;
-    }
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#fff0f5,#ffe4ec);
+  text-align:center;
+  overflow-x:hidden;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      color: #c2185b;
-      margin-bottom: 10px;
-    }
+#start{
+  position:fixed;
+  inset:0;
+  background:#ffeef5;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:5;
+}
 
-    h2 {
-      font-weight: normal;
-      margin-bottom: 30px;
-    }
+button{
+  padding:15px 30px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d88;
+  color:white;
+  font-size:18px;
+}
 
-    .message {
-      max-width: 600px;
-      margin: auto;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      background: rgba(255,255,255,0.7);
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    }
+h1{
+  color:#c2185b;
+  margin-top:30px;
+}
 
-    .gallery {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 15px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.message{
+  max-width:600px;
+  margin:20px auto;
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  line-height:1.7;
+}
 
-    .gallery img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
+  padding:20px;
+}
 
-    footer {
-      margin-top: 40px;
-      font-style: italic;
-      color: #555;
-    }
-  </style>
+.gallery img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+.heart{
+  position:fixed;
+  bottom:-10px;
+  font-size:20px;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+  to{transform:translateY(-110vh);opacity:0;}
+}
+</style>
 </head>
+
 <body>
 
-  <h1>Happy Birthday, Bennie 🤍</h1>
-  <h2>February 8 — your day ✨</h2>
+<div id="start">
+<h2>Hey Birthday Girl…</h2>
+<p>tap this when you’re smiling</p>
+<button onclick="openSite()">open</button>
+</div>
 
-  <div class="message">
-    Bennie,<br><br>
-    Today is your birthday, but somehow you’re the gift.  
-    You make moments lighter, laughs easier, and smiles happen without trying.  
-    <br><br>
-    I hope this year treats you gently — and if it doesn’t,  
-    just know I’ll be right here annoying you, cheering you on,  
-    and making sure you don’t forget how special you are 😉  
-    <br><br>
-    Happy Birthday, lil miss.  
-    You deserve all the good things… and maybe a few of me too 🤍
-  </div>
+<audio id="music" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
 
-  <div class="gallery">
-    <img src="pic1.jpg">
-    <img src="pic2.jpg">
-    <img src="pic3.jpg">
-    <img src="pic4.jpg">
-    <img src="pic5.jpg">
-  </div>
+<div id="main" style="display:none">
 
-  <footer>
-    — made with a smile, just for you 💕
-  </footer>
+<h1>Happy Birthday, Teddy Bear 🤍</h1>
+
+<div class="message">
+Bennie,<br><br>
+You make everything softer without trying.  
+You’re the kind of person that turns normal moments into ones people remember.  
+<br><br>
+I hope today feels light, fun, and full of small things that make you smile.  
+And if not… I’ll happily take that job 😉  
+<br><br>
+I’m really glad you’re here.  
+And I’m really glad I get to know you.  
+<br><br>
+Happy Birthday, lil miss.  
+Don’t let this year go by without letting me make a few memories with you.
+</div>
+
+<div class="gallery">
+<img src="pic1.jpg">
+<img src="pic2.jpg">
+<img src="pic3.jpg">
+<img src="pic4.jpg">
+<img src="pic5.jpg">
+</div>
+
+<p>— made with a smile, just for you 🤍</p>
+
+</div>
+
+<script>
+function openSite(){
+ document.getElementById("start").style.display="none";
+ document.getElementById("main").style.display="block";
+ document.getElementById("music").play();
+}
+
+function hearts(){
+ const h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="🤍";
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(Math.random()*20+10)+"px";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),6000);
+}
+setInterval(hearts,500);
+</script>
 
 </body>
 </html>
