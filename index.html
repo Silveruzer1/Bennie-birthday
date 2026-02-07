@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Teddy Bear 🤍</title>
 
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg,#fff0f5,#ffe4ec);
+  text-align:center;
+  overflow-x:hidden;
+}
+
+#start{
+  position:fixed;
+  inset:0;
+  background:#ffeef5;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:5;
+}
+
+button{
+  padding:15px 30px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d88;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+}
+
+h1{
+  color:#c2185b;
+  margin-top:30px;
+}
+
+.message{
+  max-width:600px;
+  margin:20px auto;
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  line-height:1.7;
+  text-align:left;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:12px;
+  padding:20px;
+}
+
+.gallery img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+.heart{
+  position:fixed;
+  bottom:-10px;
+  font-size:20px;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float{
+  to{transform:translateY(-110vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- FLIRTY LANDING SCREEN -->
+<div id="start">
+  <h2>HAPPY BIRTHDAY LIL MISS… 😏</h2>
+  <p>Tap this if you’re ready for a little trouble, a lot of smiles, and maybe a few surprises 💕</p>
+  <button onclick="openSite()">open</button>
+</div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- MAIN CONTENT -->
+<div id="main" style="display:none">
+
+<h1>Happy Birthday, Teddy Bear 🤍</h1>
+
+<div class="message">
+  <p>Hey baby,</p>
+
+  <p>Today is your day, lil miss, but somehow it feels like I’m the lucky one.</p>
+
+  <p>You have this magical way of making me smile without even trying. Every little thing you do somehow turns ordinary moments into memories I can’t stop thinking about.</p>
+
+  <p>So… here’s a little warning in advance 😂 this year, I plan to distract you (take what belongs to Ceaser), make you laugh, and maybe make you blush just a little more. 😉</p>
+
+  <p>Happy Birthday, Bennie ❤️</p>
+
+  <p>May your day be as playful, warm, and unforgettable as you are. I also pray that the Good Lord keeps you safe and grants all your heart desires. Amen! 🥹💕</p>
+</div>
+
+<div class="gallery">
+  <img src="pic1.jpg">
+  <img src="pic2.jpg">
+  <img src="pic3.jpg">
+  <img src="pic4.jpg">
+  <img src="pic5.jpg">
+</div>
+
+<p>— made with a smile, just for you 🤍</p>
+
+</div>
+
+<script>
+function openSite(){
+ document.getElementById("start").style.display="none";
+ document.getElementById("main").style.display="block";
+ document.getElementById("music").play();
+}
+
+function hearts(){
+ const h=document.createElement("div");
+ h.className="heart";
+ h.innerHTML="🤍";
+ h.style.left=Math.random()*100+"vw";
+ h.style.fontSize=(Math.random()*20+10)+"px";
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),6000);
+}
+setInterval(hearts,500);
+</script>
+
+</body>
+</html>
