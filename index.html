@@ -1,122 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Teddy Bear 🤍</title>
+<title>Happy Birthday Bennie 🤍</title>
 
 <style>
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg,#fff0f5,#ffe4ec);
+  font-family:"Segoe UI", sans-serif;
+  background: linear-gradient(180deg,#fff5f8,#ffe9f1,#fff);
   text-align:center;
+  color:#5a3a42;
   overflow-x:hidden;
 }
 
 #start{
   position:fixed;
   inset:0;
-  background:#ffeef5;
+  background: radial-gradient(circle at center,#ffeef5,#ffdce8);
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
   z-index:5;
+  animation:fadeIn 1.2s ease;
 }
 
 button{
-  padding:15px 30px;
+  margin-top:20px;
+  padding:14px 28px;
   border:none;
-  border-radius:30px;
-  background:#ff4d88;
+  border-radius:40px;
+  background:#ff6f9c;
   color:white;
-  font-size:18px;
+  font-size:16px;
   cursor:pointer;
+  box-shadow:0 8px 25px rgba(255,111,156,0.25);
+  transition:.3s;
 }
 
+button:hover{ transform:scale(1.05); }
+
 h1{
-  color:#c2185b;
-  margin-top:30px;
+  margin-top:40px;
+  font-weight:500;
+  letter-spacing:1px;
 }
 
 .message{
-  max-width:600px;
-  margin:20px auto;
-  background:white;
-  padding:25px;
-  border-radius:20px;
-  line-height:1.7;
+  max-width:620px;
+  margin:30px auto;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  padding:32px;
+  border-radius:22px;
+  line-height:1.8;
   text-align:left;
+  box-shadow:0 15px 35px rgba(0,0,0,0.07);
+  animation:fadeUp 1.2s ease;
 }
 
 .gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
   gap:12px;
   padding:20px;
 }
 
 .gallery img{
-  width:100%;
-  height:180px;
+  width:150px;
+  height:190px;
   object-fit:cover;
   border-radius:14px;
+  transition:.4s;
 }
+
+.gallery img:hover{ transform:scale(1.05); }
 
 .heart{
   position:fixed;
-  bottom:-10px;
-  font-size:20px;
-  animation:float 6s linear infinite;
+  bottom:-20px;
+  font-size:16px;
+  animation:float 8s linear infinite;
+  opacity:.6;
 }
 
 @keyframes float{
-  to{transform:translateY(-110vh);opacity:0;}
+  to{transform:translateY(-120vh);opacity:0;}
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(25px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+  from{opacity:0;}
+  to{opacity:1;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- FLIRTY LANDING SCREEN -->
+<!-- LANDING -->
 <div id="start">
-  <h2>HAPPY BIRTHDAY LIL MISS… 😏</h2>
-  <p>Tap this if you’re ready for a little trouble, a lot of smiles, and maybe a few surprises 💕</p>
+  <h2>HAPPY BIRTHDAY LIL MISS 😏</h2>
+  <p>Tap if you're ready for a little trouble and a lot of smiles 💕</p>
   <button onclick="openSite()">open</button>
 </div>
 
 <!-- MUSIC -->
 <audio id="music" loop>
-<source src="song.mp3" type="audio/mpeg">
+  <source src="song.mp3" type="audio/mpeg">
 </audio>
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
 <div id="main" style="display:none">
 
 <h1>Happy Birthday, Teddy Bear 🤍</h1>
 
 <div class="message">
-  <p>Hey baby,</p>
+<p>Hey baby,</p>
 
-  <p>Today is your day, lil miss, but somehow it feels like I’m the lucky one.</p>
+<p>Today is your day, lil miss, but somehow it feels like I’m the lucky one.</p>
 
-  <p>You have this magical way of making me smile without even trying. Every little thing you do somehow turns ordinary moments into memories I can’t stop thinking about.</p>
+<p>You have this magical way of making me smile without even trying. Every little thing you do somehow turns ordinary moments into memories I can’t stop thinking about.</p>
 
-  <p>So… here’s a little warning in advance 😂 this year, I plan to distract you (take what belongs to Ceaser), make you laugh, and maybe make you blush just a little more. 😉</p>
+<p>So… here’s a little warning in advance 😂 this year, I plan to distract you (take what belongs to Ceaser), make you laugh, and maybe make you blush just a little more. 😉</p>
 
-  <p>Happy Birthday, Bennie ❤️</p>
+<p>Happy Birthday, Bennie ❤️</p>
 
-  <p>May your day be as playful, warm, and unforgettable as you are. I also pray that the Good Lord keeps you safe and grants all your heart desires. Amen! 🥹💕</p>
+<p>May your day be as playful, warm, and unforgettable as you are. I also pray that the Good Lord keeps you safe and grants all your heart desires. Amen! 🥹💕</p>
 </div>
 
 <div class="gallery">
   <img src="pic1.jpg">
   <img src="pic2.jpg">
   <img src="pic3.jpg">
+  <img src="pic4.jpg">
+  <img src="pic5.jpg">
 </div>
 
-<p>— made with a smile, just for you 🤍</p>
+<p style="opacity:.7;margin-bottom:40px;">made with love 🤍</p>
 
 </div>
 
@@ -124,7 +152,18 @@ h1{
 function openSite(){
  document.getElementById("start").style.display="none";
  document.getElementById("main").style.display="block";
- document.getElementById("music").play();
+
+ let music=document.getElementById("music");
+ music.volume=0;
+ music.play();
+
+ let fade=setInterval(()=>{
+   if(music.volume<1){
+     music.volume+=0.05;
+   }else{
+     clearInterval(fade);
+   }
+ },200);
 }
 
 function hearts(){
@@ -132,11 +171,10 @@ function hearts(){
  h.className="heart";
  h.innerHTML="🤍";
  h.style.left=Math.random()*100+"vw";
- h.style.fontSize=(Math.random()*20+10)+"px";
  document.body.appendChild(h);
- setTimeout(()=>h.remove(),6000);
+ setTimeout(()=>h.remove(),8000);
 }
-setInterval(hearts,500);
+setInterval(hearts,900);
 </script>
 
 </body>
